@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import csv
 
-#
+
 _URL = 'https://storage.googleapis.com/laurencemoroney-blog.appspot.com/Sunspots.csv'
 path_to_zip = keras.utils.get_file('Sunspots.csv', origin=_URL, extract=True)
 
@@ -42,7 +42,6 @@ batch_size = 32
 shuffle_buffer_size = 1000
 
 
-#
 def windowed_dataset(series, window_size, batch_size, shuffle_buffer):
     series = tf.expand_dims(series, axis=-1)
     ds = tf.data.Dataset.from_tensor_slices(series)
